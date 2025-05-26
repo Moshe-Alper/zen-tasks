@@ -1,1 +1,12 @@
-  <app-header></app-header>
+<app-header/>
+
+<main>
+  <ul id="users">
+    <li>
+      <user [avatar]="users[0].avatar" [name]="users[0].name"/>
+    </li>
+    <li>
+      <user [avatar]="users[1].avatar" [name]="users[1].name"/>
+    </li>
+  </ul>
+</main>
