@@ -10,7 +10,7 @@
         @for (task of selectedUserTasks; track task.id) {
 
         <li>
-            <task-preview [task]="task" />
+            <task-preview [task]="task" (complete)="onCompleteTask($event)" />
         </li>
         }
     </ul>
