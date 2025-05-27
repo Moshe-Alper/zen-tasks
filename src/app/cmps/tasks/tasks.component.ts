@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core'
+import { Component, inject, Input } from '@angular/core'
 import { TaskPreviewComponent } from '../task-preview/task-preview.component'
 import { dummyTasks } from './../../data/dummy-tasks'
 import { AddTaskComponent } from "../add-task/add-task.component"
@@ -17,14 +17,10 @@ export class TasksComponent {
   isAddingTask = false
 
 
-  constructor(private tasksService: TasksService) {}
+  private tasksService = inject(TasksService)
 
   get selectedUserTasks() {
     return this.tasksService.getUserTasks(this.userId)
-  }
-
-  onCompleteTask(id: string) {
-    
   }
 
   onStartAddTask() {
